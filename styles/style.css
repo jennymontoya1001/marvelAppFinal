@@ -1,0 +1,305 @@
+/* *{
+    margin: 0; margen cero a todos los elementos
+    de la página
+} */
+/*Las propiedades dentro de css se heredan
+en cascada, por eso se le conoce como 
+hoja de estilo en cascada 
+en css se pueden crear variables 
+o custom properties y se inicia 
+con doble guion --
+
+selector+llaves, dentro de la llaves van propiedades
+y valores de propiedades que se dividen entre punto y 
+coma y se dividen con dos puntos entre la propiedad y el
+valor
+
+punto para .clases
+numeral para #id
+
+pseudoselectores:
+Si quisiera ponerle variables a todos los elementos de mi documento
+puedo usar pseudoselectores, estos son elementos que existen dentro 
+de nuestro documento, pero que no necesariamente nosotros declaramos
+o creamos por ejemplo :root
+permite dar estilos globales o generales a todo el documento
+
+Para alinear
+display: flex
+.social > *{
+     display: flex; 
+}
+
+display: inline
+.social > * {
+    display: inline;
+ 
+}
+la línea
+.social > * {
+  display: inline;
+}
+// el asterisco es un comodín
+// este selector significa que a cualquier tipo de 
+hijo directo se le aplicará la propiedad o las propiedades
+
+
+display: inline quiere decir que la disposición de los elementos
+es en linea por que por defecto la disposicion de los elementos 
+es en bloque y en bloque significa que un elemento va va a ir 
+encima de otro elemento y los va a aplicar y en línea va
+al costado hasta que tu navegador que de espacio, y si no
+me da espacio baja a la siguiente líneay la ocupa
+
+propiedad border tiene tres parámetros
+border: 1px solid red
+1. tamaño por ejemplo 1px
+2. el estilo del borde ej solido para que sea una línea recta
+3. el color del borde
+
+justify-content: space-evenly; 
+space-evenly toma todo el espacio disponible en la caja y pone
+el mismo espacio entre cada uno de los elementos
+
+overflow: hidden; overflow o desbordamiento: hidden esconde lo que se desborda
+
+padding: 50px; relleno margen interno 
+
+font-weight: 400 permite cambiar el peso de la
+fuente
+
+ padding:  10px 0 10px 0; es igual que tener
+padding:  10px 0;
+
+ancho máximo
+  max-width: 300px;
+
+Sirve para que el elemnto no haga resize
+No se hace pequeño para nada
+  flex-shrink: 0;
+
+sirve toma el espacio que pueda
+flex-grow: 1;
+*/
+
+:root{ /*permite dar estilos globales o generales a todo el documento*/
+    --varColor:#3A3539;
+    --varLetra:white;
+    }
+    
+
+body{
+    background: black; /*color fondo*/ 
+    color: white; /*color base*/
+    margin: 0;/*quita el margen que trae el body por defecto*/
+    overflow-x: hidden; /*ocultar el scroll horizontal del body*/
+}
+
+video{
+   width: 100%; /*así se adapta al 100% del ancho de la página, 
+   es útil para moviles*/
+  /* max-width: 600px; máximo de ancho de 600px*/
+   max-height: 400px;
+  /*  margin-left: 25%; */
+}
+
+a{
+    color: white;
+    text-decoration: none;/*Elimina la línea de abajo 
+    que indica enlace*/
+}
+
+/*ul*/
+#navUl{
+ padding: 0; /*le quitamos el padding 
+ que trae por defecto en ul*/
+  margin: 0;
+  text-align: center;
+  margin-left:10%;;
+}
+
+/*li*/
+.navItem{
+   list-style: none; /*elimina las viñetas del li */
+   display: inline;
+   letter-spacing: 2px; /*Espaciado en las letras*/
+   line-height: 6; /*alto de la línea*/
+   /*border: 5px solid red;*/
+   margin-right: 10%;
+}
+
+/*imagenes superheroes*/
+#image{
+    max-width: 100%;
+    width: 100px;
+    margin-left: 25px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer; /*la mano del cursor*/
+}
+
+
+
+/*tarjeta*/
+.card{
+    /*border: 1px solid red;*/
+    display: inline-block;
+   /* margin: 20px;*/
+    /*white-space: nowrap; */
+   
+}
+
+#template-card{
+  display: flex;
+  
+  /*overflow-x: scroll; sirve para generar un scroll*/
+}
+
+/*row del id items*/
+.row{
+    margin-left: 50px;
+}
+
+h5{
+    text-align: center;
+}
+
+#form{
+    border: 1px solid white;
+    max-width: 50%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.contenedor-Formulario{
+    width: 100%;   
+    margin-left: 25%;
+}
+
+
+.form h2{
+    font-size: 24px;
+    color: var(--varLetra);
+  }
+ 
+/*lista de generos*/
+.form input, select{
+      inline-size: 100%;
+      border:1px solid var(--varColor) ;
+      box-sizing: border-box;
+      color:white;
+      background-color:#251F24 ;
+      border-radius: 8px;
+      padding-inline: 16px;
+      padding-block: 12px;
+      color:var(--varLetra);
+      font-size: 16px;
+      margin-block-end:24px
+}
+
+.form input[type="submit"]{
+    background: #157EFB;
+    border: none;
+}
+
+
+.form label{
+   color: var(--varLetra);
+   font-size: 18px;
+}
+
+/*textarea del form*/
+#msm{
+  inline-size: 100%;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 10px;
+
+}
+
+
+/*footer*/
+footer{
+    margin-left: 2.5%;
+    width: 100%;
+  }
+
+.containerF{
+        display:inline-flex;
+        flex-direction: row;
+        background-color: black;
+        width: 95%;
+        margin: 5% auto;
+        flex-wrap: wrap;
+        justify-content: space-around;   
+}
+
+
+/*medias queries*/
+/*para resoluciones menores a 640 píxeles de ancho (móviles).*/
+@media screen and (max-width: 640px) {
+
+  #navUl{
+     margin-right:0%;
+     margin-left: 35%;
+     display: inline;
+   }
+
+  main{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body{
+    max-width: 80%;
+    padding:0
+  }  
+
+  .row{
+    margin: 5% 5%;
+    margin-left: 25%;
+    margin-right: 0%;
+
+  }
+
+  img{
+     max-width: 100%;
+  }
+
+  video{
+    max-width: 100%;
+    margin-left: 12%;
+
+  }
+
+  .card{
+     padding-right: 5%;
+     padding-left: 25%;  
+  }
+
+  .content{
+    padding-right: 0%;
+    padding-left: 0%; 
+    margin:0%;
+    margin-right: 25%;
+  }
+
+#form{
+  margin: 0%;
+  max-width: 100%;
+}
+
+  .containerF{
+    text-align: center;
+    margin: 0%;
+  }
+
+  footer{
+    padding:0%;
+    margin-left: 15%;
+    margin-right: 0%;
+  }
+
+}
